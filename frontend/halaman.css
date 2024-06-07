@@ -1,0 +1,90 @@
+/* Custom CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Navigation Bar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 0;
+    text-align: left;
+}
+
+.hero-text {
+    margin-top: 60px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.hero-text .btn {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+/* Products Section */
+.products-section {
+    background-color: #fff;
+}
+
+.products-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.card {
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    color: #343a40;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}

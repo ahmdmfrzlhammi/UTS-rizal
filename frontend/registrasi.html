@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Registrasi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="registrasi.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Registrasi Akun Baru</h1>
+        
+        <div class="card mb-4 registration-card">
+            <div class="card-header">Registrasi</div>
+            <div class="card-body">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <a href="login.html" id="registration" type="submit" class="btn btn-primary">Registrasi</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#registrationForm').submit(function(event) {
+                event.preventDefault();
+
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var registrationData = {
+                    name: name,
+                    email: email,
+                    password: password
+                };
+
+                $.ajax({
+                    url: '/register',  // Ganti dengan URL endpoint registrasi Anda
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(registrationData),
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#registrationResult').text('Registrasi berhasil! Selamat datang, ' + response.name);
+                    },
+                    error: function(xhr, status, error) {
+                        $('#registrationResult').text('Terjadi kesalahan: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
